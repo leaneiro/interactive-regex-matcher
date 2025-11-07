@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { FiniteAutomaton } from "../src/automata/FiniteAutomaton";
 import { AFDSimulator } from "../src/automata/AFDSimulator";
-import { AutomatonConfig } from "../src/automata/types";
+import { AFDConfig } from "../src/automata/types";
 
 /**
  * Test language: strings ending with "ab"
@@ -23,7 +23,7 @@ describe("AFDSimulator", () => {
       ["q2|b", "q0"],
     ]);
 
-    const config: AutomatonConfig = {
+    const config: AFDConfig = {
       states: new Set(["q0", "q1", "q2"]),
       alphabet: new Set(["a", "b"]),
       start: "q0",

@@ -7,11 +7,21 @@ export type StateId = string;
 export type Symbol = string;
 export type TransitionKey = string;
 
-/** Deterministic finite automaton configuration. */
-export interface AutomatonConfig {
+/** Deterministic Finite Automaton configuration. */
+export interface AFDConfig {
   states: Set<StateId>;
   alphabet: Set<Symbol>;
   start: StateId;
   accept: Set<StateId>;
   transitions: Map<TransitionKey, StateId>; // key = `${state}|${symbol}`
+}
+
+/** NFA (Non-deterministic Finite Automaton) configuration. */
+export interface AFNConfig {
+  states: Set<StateId>;
+  alphabet: Set<Symbol>;
+  start: StateId;
+  accept: Set<StateId>;
+  transitions: Map<TransitionKey, Set<StateId>>; // possibly multiple next states
+  epsilon: Map<StateId, Set<StateId>>; // ε-transitions
 }

@@ -1,10 +1,10 @@
-import { AutomatonConfig, StateId, Symbol, TransitionKey } from "./types";
+import { AFDConfig, StateId, Symbol, TransitionKey } from "./types";
 
 /**
  * FiniteAutomaton provides read-only access to deterministic transition rules.
  */
 export class FiniteAutomaton {
-  constructor(private readonly config: AutomatonConfig) {}
+  constructor(private readonly config: AFDConfig) {}
 
   get start(): StateId {
     return this.config.start;
